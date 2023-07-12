@@ -1,12 +1,15 @@
 <script setup>
 import { RouterView } from 'vue-router';
 import Navbar from "./components/NavbarComponent.vue";
+import Footer from "./components/FooterComponent.vue";
 </script>
 
 <template>
 <Navbar></Navbar>
 
 <RouterView></RouterView>
+
+<Footer></Footer>
 </template>
 
 <script>
@@ -15,7 +18,8 @@ import Navbar from "./components/NavbarComponent.vue";
 export default {
   name: 'App',
   components: {
-    Navbar
+    Navbar,
+    Footer,
   }
 }
 </script>
@@ -40,6 +44,7 @@ body{
   --light-grey-10: rgba(239,239,241,0.1);
   --logo-color: #E65500;
   --bronze: #CC6633;
+  --bronze-75: rgba(204,102,51,0.75);
   --bronze-50: rgba(204,102,51,0.5);
   --bronze-30: rgba(204,102,51,0.3);
 
