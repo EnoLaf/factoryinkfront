@@ -4,37 +4,47 @@
 
 <template>
 
-  <h1>Home Page</h1>
-
-  <div class="artists">
-
-    <Artist profilePicture="/david.jpg" name="David"></Artist>
-    <Artist id="artist-2" profilePicture="/veronique.jpg" name="Véronique"></Artist>
-
+  <div class="banner">
+    <h1>Factory Ink Tattoo</h1>
+    <h2>Réalisme - Floral - Animal - Graphique</h2>
+    <button>Prendre rendez-vous</button>
   </div>
-  <div class="artists-mobile">
 
-    <div class="artist-1" v-if="artist">
-      <svg id="arrow-left" xmlns="http://www.w3.org/2000/svg" width="19" height="26" viewBox="0 0 19 26" fill="none">
-      <path d="M17.5 25L2 13.4L17.5 1" stroke="#14110E" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <Artist class="artist" profilePicture="/david.jpg" name="David"></Artist>
-      <svg id="arrow-right" xmlns="http://www.w3.org/2000/svg" width="19" height="26" viewBox="0 0 19 26" fill="none" v-if="artist" @click="showNextArtist">
-      <path d="M1 1L16.5 12.6L1 25" stroke="#EFEFF1" stroke-width="2" stroke-linecap="round"/>
-      </svg>
+  <section>
+    <div class="our-artists">
+      <p>Nos Artistes</p>
+      <div class="line"></div>
     </div>
 
-    <div class="artist-2" v-if="!artist">
-      <svg id="arrow-left" xmlns="http://www.w3.org/2000/svg" width="19" height="26" viewBox="0 0 19 26" fill="none" v-if="!artist" @click="showPreviousArtist">
-      <path d="M17.5 25L2 13.4L17.5 1" stroke="#EFEFF1" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <Artist class="artist" profilePicture="/veronique.jpg" name="Véronique"></Artist>
-      <svg id="arrow-right" xmlns="http://www.w3.org/2000/svg" width="19" height="26" viewBox="0 0 19 26" fill="none">
-      <path d="M1 1L16.5 12.6L1 25" stroke="#14110E" stroke-width="2" stroke-linecap="round"/>
-      </svg>
+    <div class="artists">
+
+      <Artist profilePicture="/david.jpg" name="David"></Artist>
+      <Artist id="artist-2" profilePicture="/veronique.jpg" name="Véronique"></Artist>
+
     </div>
-    
-  </div>
+    <div class="artists-mobile">
+
+      <div class="artist-1" v-if="artist">
+        <svg id="arrow-left" xmlns="http://www.w3.org/2000/svg" width="19" height="26" viewBox="0 0 19 26" fill="none">
+        <path d="M17.5 25L2 13.4L17.5 1" stroke="#14110E" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <Artist class="artist" profilePicture="/david.jpg" name="David"></Artist>
+        <svg id="arrow-right" xmlns="http://www.w3.org/2000/svg" width="19" height="26" viewBox="0 0 19 26" fill="none" v-if="artist" @click="showNextArtist">
+        <path d="M1 1L16.5 12.6L1 25" stroke="#EFEFF1" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <div class="artist-2" v-if="!artist">
+        <svg id="arrow-left" xmlns="http://www.w3.org/2000/svg" width="19" height="26" viewBox="0 0 19 26" fill="none" v-if="!artist" @click="showPreviousArtist">
+        <path d="M17.5 25L2 13.4L17.5 1" stroke="#EFEFF1" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <Artist class="artist" profilePicture="/veronique.jpg" name="Véronique"></Artist>
+        <svg id="arrow-right" xmlns="http://www.w3.org/2000/svg" width="19" height="26" viewBox="0 0 19 26" fill="none">
+        <path d="M1 1L16.5 12.6L1 25" stroke="#14110E" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      
+    </div>
 
   <!-- 
   <div class="artists" v-for="artist in artists" :key="artist.name">
@@ -42,13 +52,15 @@
   </div>
   --> 
 
+  </section>
+
 </template>
 
 <script>
   export default {
     name: "HomeView",
     components: {
-      Artist,
+      Artist
     },
     data() {
       return {
@@ -78,7 +90,64 @@
 </script>
 
 <style scoped>
+.banner{
+  width: 100vw;
+  height: 60vh;
+  top: -6.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../public/banniere.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+.banner h1{
+  font-family: 'Noto Serif';
+  font-size: 3rem;
+  font-weight: 900;
+}
+.banner h2{
+  margin-top: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.875rem;
+  font-weight: 400;
+}
+.banner button{
+  margin-top: 4rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--black);
+  background-color: var(--bronze);
+  width: 280px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+.our-artists{
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.our-artists p{
+  font-family: 'Noto Serif';
+  font-size: 1.625rem;
+  font-weight: 600;
+  font-variant: small-caps;
+}
+.our-artists .line{
+  width: 70vw;
+  height: 2px;
+  background-color: var(--logo-color);
+  margin-left: 1rem;
+}
 .artists{
+  margin-top: 11rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -92,10 +161,28 @@
 
 /* Responsive */
 @media (max-width : 480px) {
+  .banner h1{
+    font-size: 1.5rem;
+  }
+  .banner h2{
+    margin-top: 1.5rem;
+    font-size: 1rem;
+  }
+  .banner button{
+    font-size: 1rem;
+    width: 210px;
+  }
+  .our-artists p{
+    font-size: 1.125rem;
+  }
+  .our-artists .line{
+    width: 60vw;
+  }
   .artists{
     display: none;
   }
   .artists-mobile{
+    margin-top: 4rem;
     display: flex;
   }
   .artist-1, .artist-2{
@@ -117,6 +204,22 @@
 }
 
 @media (min-width: 481px) and (max-width : 1024px) {
-
+  .banner h1{
+    font-size: 2.5rem;
+  }
+  .banner h2{
+    margin-top: 1.88rem;
+    font-size: 1.5rem;
+  }
+  .banner button{
+    margin-top: 4.8rem;
+    font-size: 1.25rem;
+  }
+  .our-artists p{
+    font-size: 1.625rem;
+  } 
+  .our-artists .line{
+    width: 60vw
+  }
 }
 </style>
