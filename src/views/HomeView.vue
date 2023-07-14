@@ -11,7 +11,7 @@
   </div>
 
   <section>
-    <div class="our-artists">
+    <div class="artist-title">
       <p>Nos Artistes</p>
       <div class="line"></div>
     </div>
@@ -22,6 +22,7 @@
       <Artist id="artist-2" profilePicture="/veronique.jpg" name="Véronique"></Artist>
 
     </div>
+
     <div class="artists-mobile">
 
       <div class="artist-1" v-if="artist">
@@ -51,6 +52,22 @@
     <Artist :profilePicture="artist.profilePicture" :name="artist.name"></Artist>
   </div>
   --> 
+
+  </section>
+  <section>
+
+    <div class="shop-title">
+      <div class="line"></div>
+      <p>Le Shop</p>
+    </div>
+
+    <div class="shop">
+      <img src="shop.jpg" alt="">
+      <div class="presentation">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi finibus libero sit amet urna condimentum accumsan. Nam suscipit sit amet magna at semper. </p>
+        <button class="contact-button">Nous contacter</button>
+      </div>
+    </div>
 
   </section>
 
@@ -127,20 +144,20 @@
   border: none;
   outline: none;
 }
-.our-artists{
+.artist-title{
   margin-top: 5rem;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   justify-content: flex-end;
 }
-.our-artists p{
+.artist-title p{
   font-family: 'Noto Serif';
   font-size: 1.625rem;
   font-weight: 600;
   font-variant: small-caps;
 }
-.our-artists .line{
+.artist-title .line{
   width: 70vw;
   height: 2px;
   background-color: var(--logo-color);
@@ -158,8 +175,65 @@
 .artists-mobile{
   display: none;
 }
+.shop-title{
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.shop-title p{
+  margin-top: 11rem;
+  font-family: 'Noto Serif';
+  font-size: 1.625rem;
+  font-weight: 600;
+  font-variant: small-caps;
+  margin-left: 1rem;
+}
+.shop-title .line{
+  width: 70vw;
+  height: 2px;
+  background-color: var(--logo-color);
+}
+.shop{
+  margin-top: 7.5rem;
+  margin-bottom: 7.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.shop img{
+  height: 30rem;
+  width: 41rem;
+}
+.presentation{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.presentation p{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.625rem;
+  font-weight: 400;
+  width: 31rem;
+  height: 10rem;
+}
+.contact-button{
+    background-color: var(--bronze);
+    width: 195px;
+    height: 30px;
+    margin-top: 4rem;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    outline: none;
+    border: none;
+}
 
 /* Responsive */
+/* Mobile */
 @media (max-width : 480px) {
   .banner h1{
     font-size: 1.5rem;
@@ -172,10 +246,10 @@
     font-size: 1rem;
     width: 210px;
   }
-  .our-artists p{
+  .artist-title p{
     font-size: 1.125rem;
   }
-  .our-artists .line{
+  .artist-title .line{
     width: 60vw;
   }
   .artists{
@@ -200,9 +274,37 @@
     margin-right: 2.3rem;
     margin-top: 5.5rem;
   }
-
+  .shop-title p{
+    margin-top: 3.62rem;
+    font-size: 1.125rem;
+  }
+  .shop-title .line{
+    width: 60vw;
+  }
+  .shop{
+    flex-direction: column;
+    margin-top: 5rem;
+    margin-bottom: 4.7rem;
+  }
+  .shop img{
+    width: 21rem;
+    height: 21rem;
+  }
+  .shop p{
+    margin-top: 3rem;
+    font-size: 0.9375rem;
+    width: 22rem;
+    height: 4.5rem;
+    text-align: center;
+  }
+  .contact-button{
+    margin-top: 2.5rem;
+    width: 145px;
+    font-size: 1rem;
+  }
 }
 
+/* Tablet */
 @media (min-width: 481px) and (max-width : 1024px) {
   .banner h1{
     font-size: 2.5rem;
@@ -215,11 +317,37 @@
     margin-top: 4.8rem;
     font-size: 1.25rem;
   }
-  .our-artists p{
+  .artist-title p{
     font-size: 1.625rem;
   } 
-  .our-artists .line{
+  .artist-title .line{
     width: 60vw
+  }
+  .shop-title p{
+    margin-top: 8rem;
+    font-size: 1.625rem;
+  } 
+  .shop-title .line{
+    width: 60vw
+  }
+  .shop{
+    flex-direction: column;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+  .shop img{
+    width: 43.75rem;
+    height: 21rem;
+  }
+  .shop p{
+    text-align: center;
+    font-size: 1.375rem;
+    margin-top: 4rem;
+    width: 37.5rem;
+    height: 5rem;
+  }
+  .contact-button{
+    margin-top: 2.5rem;
   }
 }
 </style>
