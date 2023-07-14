@@ -139,7 +139,7 @@
   color: var(--black);
   background-color: var(--bronze);
   width: 280px;
-  height: 30px;
+  height: 45px;
   border-radius: 10px;
   border: none;
   outline: none;
@@ -222,7 +222,7 @@
 .contact-button{
     background-color: var(--bronze);
     width: 195px;
-    height: 30px;
+    height: 45px;
     margin-top: 4rem;
     border-radius: 10px;
     font-family: 'Montserrat', sans-serif;
@@ -235,6 +235,9 @@
 /* Responsive */
 /* Mobile */
 @media (max-width : 480px) {
+  .banner{
+    height: 60vh;
+  }
   .banner h1{
     font-size: 1.5rem;
   }
@@ -306,6 +309,9 @@
 
 /* Tablet */
 @media (min-width: 481px) and (max-width : 1024px) {
+  .banner{
+    height: 60vh;
+  }
   .banner h1{
     font-size: 2.5rem;
   }
