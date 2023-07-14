@@ -109,7 +109,7 @@
 <style scoped>
 .banner{
   width: 100vw;
-  height: 60vh;
+  height: 80vh;
   top: -6.25rem;
   display: flex;
   flex-direction: column;
@@ -118,7 +118,7 @@
   background-image: url("../../public/banniere.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: bottom center;
 }
 .banner h1{
   font-family: 'Noto Serif';

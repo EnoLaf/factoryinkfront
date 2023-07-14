@@ -60,7 +60,7 @@ props: {
     color: var(--black);
     background-color: var(--bronze);
     width: 150px;
-    height: 30px;
+    height: 40px;
     border-radius: 10px;
     border: none;
     outline: none;
