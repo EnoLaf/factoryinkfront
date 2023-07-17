@@ -169,15 +169,19 @@ name: "FooterComponent",
 @media (max-width : 480px) {
     .container{
         justify-content: center;
+        flex-direction: column;
     }
     .logo a{
         display: none;
     }
-    .schedule{
-        display: none;
-    }
-    .address p, .phone p{
+    .schedule p, .address p, .phone p{
         font-size: 1rem;
+    }
+    .schedule p{
+        text-align: center;
+    }
+    .address{
+        margin-top: 2rem;
     }
     .network{
         display: flex;

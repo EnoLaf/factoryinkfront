@@ -162,7 +162,7 @@
     right: -100%;
     background: var(--black);
     width: 100%;
-    height: 70%;
+    height: 100%;
     padding-top: 5rem;
   }
   .menu li{
