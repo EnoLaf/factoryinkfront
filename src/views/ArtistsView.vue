@@ -39,7 +39,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url("../../public/home-banner.png");
+  background-image: url("../../public/shop-banner.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom center;
