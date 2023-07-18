@@ -7,7 +7,7 @@
   <div class="banner">
     <h1>Factory Ink Tattoo</h1>
     <h2>Réalisme - Floral - Animal - Graphique</h2>
-    <button>Prendre rendez-vous</button>
+    <button @click="redirectToContact">Prendre rendez-vous</button>
   </div>
 
   <section>
@@ -65,7 +65,7 @@
       <img src="shop.jpg" alt="">
       <div class="presentation">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi finibus libero sit amet urna condimentum accumsan. Nam suscipit sit amet magna at semper. </p>
-        <button class="contact-button">Nous contacter</button>
+        <button @click="redirectToContact" class="contact-button">Nous contacter</button>
       </div>
     </div>
 
@@ -102,6 +102,9 @@
       showPreviousArtist() {
         this.artist = true;
       },
+      redirectToContact() {
+        this.$router.push('/contact');
+      },
     }
   }
 </script>
@@ -115,7 +118,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url("../../public/banniere.png");
+  background-image: url("../../public/home-banner.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom center;

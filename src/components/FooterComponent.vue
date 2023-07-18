@@ -42,7 +42,7 @@
             </div>
 
             <div class="contact-socials">
-                <button class="contact-button">Nous contacter</button>
+                <button @click="redirectToContact" class="contact-button">Nous contacter</button>
 
                 <div class="social-network">
                     <a href="https://www.facebook.com/Factoryinktattoo">
@@ -66,6 +66,11 @@
 <script>
 export default {
 name: "FooterComponent",
+methods: {
+    redirectToContact() {
+      this.$router.push('/contact');
+    },
+},
 };
 </script>
 
@@ -147,6 +152,7 @@ name: "FooterComponent",
     font-weight: 400;
     outline: none;
     border: none;
+    color: var(--black);
 }
 .social-network{
     display: flex;
