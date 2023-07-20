@@ -41,6 +41,7 @@ body{
   --black : #14110E;
   --light-grey: #EFEFF1;
   --light-grey-70: rgba(239,239,241,0.7);
+  --light-grey-20: rgba(239,239,241,0.2);
   --light-grey-10: rgba(239,239,241,0.1);
   --logo-color: #E65500;
   --bronze: #CC6633;

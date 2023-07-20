@@ -1,4 +1,5 @@
 <script setup>
+import Gallery from "../components/GalleryComponent.vue";
 </script>
 
 <template>
@@ -31,13 +32,18 @@
     <div class="line" id="third-line"></div>
   </section>
 
+  <section>
+    <Gallery class="gallery"></Gallery>
+  </section>
+  <div class="empty"></div>
+
 </template>
 
 <script>
   export default {
     name: "ShopView",
     components: {
-      
+      Gallery
     },
   }
 </script>
@@ -102,12 +108,15 @@
   width: 33.5rem;
 }
 #third-line{
-  margin-top: 0.5rem;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 7rem;
   width: 75rem;
-  margin-bottom: 5rem;
 }
+.empty{
+  height: 7rem;
+}
+
 
 /* Responsive */
 /* Mobile */
@@ -191,6 +200,10 @@
   }
   #third-line{
     width: 33.5rem;
+  }
+  .gallery{
+    margin-top: 6rem;
+    margin-bottom: 6rem;
   }
 }
 </style>
