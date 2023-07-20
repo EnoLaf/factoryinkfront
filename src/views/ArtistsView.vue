@@ -29,6 +29,14 @@ import ArtistRight from "../components/ArtistRightComponent.vue";
       posuere vel condimentum vel, consectetur in lacus. Sed sed massa vitae risus feugiat maximus. 
       Nulla malesuada quam justo, non malesuada velit tincidunt at. "
     ></ArtistRight>
+    <ArtistLeft id="artist-2-mobile"
+      profilePicture="/veronique.jpg"
+      name="Véronique"
+      styles="Lorem - Lorem - Lorem"
+      presentation="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam arcu nisl, 
+      posuere vel condimentum vel, consectetur in lacus. Sed sed massa vitae risus feugiat maximus. 
+      Nulla malesuada quam justo, non malesuada velit tincidunt at. "
+    ></ArtistLeft>
   </section>
 
 </template>
@@ -61,15 +69,15 @@ import ArtistRight from "../components/ArtistRightComponent.vue";
 
 <style scoped>
 .banner{
-  width: 100vw;
-  height: 80vh;
+  /* width: 100vw;
+  height: 40vh; */
   top: -6.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-image: url("../../public/shop-banner.png");
-  background-size: cover;
+  background-size: 100vw 40vh;
   background-repeat: no-repeat;
   background-position: bottom center;
 }
@@ -99,19 +107,45 @@ import ArtistRight from "../components/ArtistRightComponent.vue";
   margin-top: 10rem;
   margin-bottom: 10rem;
 }
+#artist-2-mobile{
+  display: none;
+}
 
 /* Responsive */
 /* Mobile */
 @media (max-width : 480px) {
   .banner{
-    height: 60vh;
+    height: 30vh;
+  }
+  .artist-title .line{
+    width: 13rem;
+  }
+  .artist-title p{
+    font-size: 1.125rem;
+  }
+  #artist-1{
+    margin-top: 7rem;
+  }
+  #artist-2{
+    display: none;
+  }
+  #artist-2-mobile{
+    display: flex;
+    margin-top: 7rem;
+    margin-bottom: 7rem;
   }
 }
 
 /* Tablet */
 @media (min-width: 481px) and (max-width : 1024px) {
   .banner{
-    height: 60vh;
+    height: 30vh;
+  }
+  .artist-title .line{
+    width: 29rem;
+  }
+  .artist-title p{
+    font-size: 1.5rem;
   }
 }
 </style>

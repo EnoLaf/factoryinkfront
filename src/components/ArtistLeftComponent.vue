@@ -94,23 +94,58 @@ props: {
 
 /* Responsive */
 @media (max-width : 480px) {
+    .artist{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        margin-left: 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
     .img{
         width: 200px;
         height: 200px;
     }
     .name{
+        margin-top: 2rem;
+        font-size: 1.25rem;
+    }
+    .styles{
         font-size: 1.125rem;
     }
+    .presentation{
+        font-size: 1rem;
+        width: 20.5rem;
+    }
     .portfolio-button{
+        margin-top: 2rem;
         font-size: 1rem;
         width: 100px;
     }
 }
 
 @media (min-width: 481px) and (max-width : 1024px) {
+    .container{
+        margin-left: 3rem;
+    }
     .img{
         width: 250px;
         height: 300px;
+    }
+    .name{
+        font-size: 1.5rem;
+    }
+    .styles{
+        font-size: 1.25rem;
+    }
+    .presentation{
+        font-size: 1.125rem;
+        width: 22rem;
+    }
+    .portfolio-button{
+        margin-top: 1.8rem;
     }
 }
 
