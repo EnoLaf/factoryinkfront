@@ -13,23 +13,13 @@ import Accordion from "../components/AccordionComponent.vue"
     </p>
   </header>
   
-  <section class="accordion">
-    <Accordion 
-      class="accordionComponent"
-      question="Lorem ipsum dolor sit amet ?" 
-      answer="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et sapiente ipsa accusantium sint dolore 
-      corportis, nihil architecto numquam incidunt laboriosam nam, magnam blanditiis autem placeat id minima iure 
-      quaerat deleniti."
-    ></Accordion>
-    <Accordion 
-      question="Lorem ipsum dolor sit amet ?" 
-      answer="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et sapiente ipsa accusantium sint dolore 
-      corportis, nihil architecto numquam incidunt laboriosam nam, magnam blanditiis autem placeat id minima iure 
-      quaerat deleniti. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et sapiente ipsa accusantium sint dolore 
-      corportis, nihil architecto numquam incidunt laboriosam nam, magnam blanditiis autem placeat id minima iure 
-      quaerat deleniti."
-    ></Accordion>
+  <section>
+    <div class="accordionComponent" v-for="qa in jsonData" :key="qa.id">
+      <Accordion :question="qa.question" :answer="qa.answer"></Accordion>
+    </div>
   </section>
+
+  <div class="empty"></div>
 
 </template>
 
@@ -41,13 +31,21 @@ import Accordion from "../components/AccordionComponent.vue"
     },
     data() {
       return {
-        
+        jsonData : null,
       }
 
     },
-    methods: {
-      
-    }
+    created() {
+    // Effectuer la requête HTTP vers l'API pour récupérer le JSON
+    fetch('https://127.0.0.1:8000/api/qa/all') // Remplacez l'URL par l'adresse de l'API réelle
+      .then(response => response.json())
+      .then(data => {
+        this.jsonData = data; // Stocker les données JSON récupérées dans la variable jsonData
+      })
+      .catch(error => {
+        console.error('Erreur lors de la récupération du JSON depuis l\'API:', error);
+      });
+  },
   }
 </script>
 
@@ -73,11 +71,11 @@ header p{
   width: 60rem;
   margin-top: 5.8rem;
 }
-.accordion{
-  margin-bottom: 14rem;
-}
 .accordionComponent{
   margin-bottom: 1rem;
+}
+.empty{
+  margin-bottom: 14rem;
 }
 
 /* Responsive */
@@ -96,7 +94,7 @@ header p{
     width: 19rem;
     margin-top: 4rem;
   }
-  .accordion{
+  .empty{
     margin-bottom: 10rem;
   }
   .accordionComponent{
@@ -119,7 +117,7 @@ header p{
     width: 40rem;
     margin-top: 2.6rem;
   }
-  .accordion{
+  .empty{
     margin-bottom: 12rem;
   }
   .accordionComponent{
