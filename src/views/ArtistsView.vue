@@ -69,15 +69,15 @@ import ArtistRight from "../components/ArtistRightComponent.vue";
 
 <style scoped>
 .banner{
-  /* width: 100vw;
-  height: 40vh; */
+  width: 100vw;
+  height: 60vh;
   top: -6.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-image: url("../../public/shop-banner.png");
-  background-size: 100vw 40vh;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom center;
 }

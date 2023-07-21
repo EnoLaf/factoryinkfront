@@ -1,0 +1,110 @@
+<!-- src/components/AccordionComponent.vue -->
+<template>
+    <div class="accordion">
+        <div class="header">
+            <h1>{{ question }}</h1>
+            <svg @click="openAccordion" v-if="!click" xmlns="http://www.w3.org/2000/svg" width="19" height="34" viewBox="0 0 19 34" fill="none">
+                <path d="M2 2L16.2929 16.2929C16.6834 16.6834 16.6834 17.3166 16.2929 17.7071L2 32" stroke="white" 
+                stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <svg @click="closeAccordion" v-if="click" xmlns="http://www.w3.org/2000/svg" width="28" height="16" viewBox="0 0 28 16" fill="none">
+                <path d="M25.6113 2.29731L14.6663 13.7072C14.2727 14.1175 13.6166 14.1175 13.223 13.7072L2.27799 2.29731" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <div v-if="click" class="content">
+            <p>{{ answer }}</p>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    name: "AccordionComponent",
+    props: {
+        question : {
+            type : String,
+            required : true
+        },
+        answer : {
+            type : String,
+            required : true
+        }
+    },
+    data() {
+      return {
+        click : false
+      }
+    },
+    methods: {
+      openAccordion(){
+        this.click = true;
+      },
+      closeAccordion(){
+        this.click = false;
+      }
+    }
+};
+</script>
+
+<style scoped>
+.accordion{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: space-around;
+    width: 56rem;
+    border-radius: 8px;
+    border: 2px solid var(--light-grey);
+    padding: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.header h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+.content p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    width: 47rem;
+    margin-top: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width : 480px) {
+    .accordion{
+        width: 19rem;
+    }
+    .header h1{
+        font-size: 1rem;
+        width: 8.25rem;
+    }
+    .content p{
+        font-size: 0.875rem;
+        width: 16rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width : 1024px) {
+    .accordion{
+        width: 41rem;
+    }
+    .header h1{
+        font-size: 1.125rem;
+    }
+    .content p{
+        font-size: 1rem;
+        width: 35rem;
+    }
+}
+
+</style>
+   
