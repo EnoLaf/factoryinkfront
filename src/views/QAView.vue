@@ -36,16 +36,16 @@ import Accordion from "../components/AccordionComponent.vue"
 
     },
     created() {
-    // Effectuer la requête HTTP vers l'API pour récupérer le JSON
-    fetch('https://127.0.0.1:8000/api/qa/all') // Remplacez l'URL par l'adresse de l'API réelle
-      .then(response => response.json())
-      .then(data => {
-        this.jsonData = data; // Stocker les données JSON récupérées dans la variable jsonData
-      })
-      .catch(error => {
-        console.error('Erreur lors de la récupération du JSON depuis l\'API:', error);
-      });
-  },
+      // Effectuer la requête HTTP vers l'API pour récupérer le JSON
+      fetch('https://127.0.0.1:8000/api/qa/all') // Remplacez l'URL par l'adresse de l'API réelle
+        .then(response => response.json())
+        .then(data => {
+          this.jsonData = data; // Stocker les données JSON récupérées dans la variable jsonData
+        })
+        .catch(error => {
+          console.error('Erreur lors de la récupération du JSON depuis l\'API:', error);
+        });
+    },
   }
 </script>
 

@@ -51,16 +51,7 @@ import ArtistRight from "../components/ArtistRightComponent.vue";
     data() {
       return {
         artist : true,
-        artists: [
-          {
-            name: 'David',
-            profilePicture: '/david.jpg'
-          },
-          {
-            name: 'Véronique',
-            profilePicture: '/veronique.jpg'
-          }
-        ]
+        
       }
 
     },

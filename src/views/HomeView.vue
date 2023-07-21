@@ -17,10 +17,14 @@
     </div>
 
     <div class="artists">
-
+      <!-- 
       <Artist profilePicture="/david.jpg" name="David"></Artist>
       <Artist id="artist-2" profilePicture="/veronique.jpg" name="Véronique"></Artist>
+      -->
+    </div>
 
+    <div class="artists" v-for="artist in jsonData" :key="artist.id">
+      <Artist :profilePicture="artist.profilePicture" :name="artist.name"></Artist>
     </div>
 
     <div class="artists-mobile">
@@ -46,12 +50,6 @@
       </div>
       
     </div>
-
-  <!-- 
-  <div class="artists" v-for="artist in artists" :key="artist.name">
-    <Artist :profilePicture="artist.profilePicture" :name="artist.name"></Artist>
-  </div>
-  --> 
 
   </section>
   <section>
@@ -81,6 +79,7 @@
     },
     data() {
       return {
+        jsonData : null,
         artist : true,
         artists: [
           {
@@ -105,7 +104,18 @@
       redirectToContact() {
         this.$router.push('/contact');
       },
-    }
+    },
+    created() {
+      // Effectuer la requête HTTP vers l'API pour récupérer le JSON
+      fetch('https://127.0.0.1:8000/api/artists/all') // Remplacez l'URL par l'adresse de l'API réelle
+        .then(response => response.json())
+        .then(data => {
+          this.jsonData = data; // Stocker les données JSON récupérées dans la variable jsonData
+        })
+        .catch(error => {
+          console.error('Erreur lors de la récupération du JSON depuis l\'API:', error);
+        });
+    },
   }
 </script>
 
