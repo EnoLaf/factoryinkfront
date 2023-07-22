@@ -140,24 +140,42 @@ button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 9rem;
-    margin-bottom: 9rem;
+    margin-top: 6.5rem;
+    margin-bottom: 6.5rem;
   }
   .detail h1{
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
   .detail p{
     margin-top: 1.6rem;
-    width: 30rem;
+    width: 19rem;
   }
   .subtitle{
-    font-size: 1.125rem;
-  }
-  .note{
     font-size: 1rem;
   }
+  .note{
+    font-size: 0.875rem;
+  }
   .form{
-    margin-top: 5rem;
+    margin-top: 3rem;
+    margin-left: 0;
+  }
+  .form input{
+    width: 19rem;
+    height: 3.1rem;
+    font-size: 1.125rem;
+  }
+  .contact-details{
+    width: 19rem;
+  }
+  .contact-details input{
+    width: 9rem;
+  }
+  #file{
+    width: 19rem;
+  }
+  button{
+    width: 19rem;
     margin-left: 0;
   }
 }
