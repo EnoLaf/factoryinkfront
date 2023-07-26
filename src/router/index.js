@@ -32,12 +32,12 @@ const router = createRouter({
       component: ArtistsView
     },
     {
-      path: '/artistes/david',
+      path: '/artistes-david',
       name: 'artist-david',
       component: ArtistDavidView
     },
     {
-      path: '/artistes/veronique',
+      path: '/artistes-veronique',
       name: 'artist-veronique',
       component: ArtistVeroniqueView
     },

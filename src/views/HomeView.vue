@@ -18,7 +18,7 @@
 
     <div class="artists">
       <div v-for="artist in jsonData" :key="artist.id">
-        <Artist class="artist" :profilePicture="artist.profilePicture" :name="artist.name"></Artist>
+        <Artist class="artist" :profilePicture="artist.profilePicture" :name="artist.name" :link="artist.link"></Artist>
       </div>
     </div>
 

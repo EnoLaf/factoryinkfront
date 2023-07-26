@@ -13,30 +13,33 @@ import ArtistRight from "../components/ArtistRightComponent.vue";
   </div>
 
   <section class="artists">
-    <ArtistLeft id="artist-1"
-      profilePicture="/david.jpg"
-      name="David"
-      styles="Lorem - Lorem - Lorem"
-      presentation="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam arcu nisl, 
-      posuere vel condimentum vel, consectetur in lacus. Sed sed massa vitae risus feugiat maximus. 
-      Nulla malesuada quam justo, non malesuada velit tincidunt at. "
-    ></ArtistLeft>
-    <ArtistRight id="artist-2"
-      profilePicture="/veronique.jpg"
-      name="Véronique"
-      styles="Lorem - Lorem - Lorem"
-      presentation="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam arcu nisl, 
-      posuere vel condimentum vel, consectetur in lacus. Sed sed massa vitae risus feugiat maximus. 
-      Nulla malesuada quam justo, non malesuada velit tincidunt at. "
-    ></ArtistRight>
-    <ArtistLeft id="artist-2-mobile"
-      profilePicture="/veronique.jpg"
-      name="Véronique"
-      styles="Lorem - Lorem - Lorem"
-      presentation="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam arcu nisl, 
-      posuere vel condimentum vel, consectetur in lacus. Sed sed massa vitae risus feugiat maximus. 
-      Nulla malesuada quam justo, non malesuada velit tincidunt at. "
-    ></ArtistLeft>
+    <div id="artist-1" v-if="jsonDataArtist1">
+        <ArtistLeft 
+          :profilePicture="jsonDataArtist1.profilePicture" 
+          :name="jsonDataArtist1.name" 
+          :styles="jsonDataArtist1.style" 
+          :presentation="jsonDataArtist1.resume" 
+          :link="jsonDataArtist1.link">
+        </ArtistLeft>
+    </div>
+    <div id="artist-2" v-if="jsonDataArtist2">
+        <ArtistRight 
+          :profilePicture="jsonDataArtist2.profilePicture" 
+          :name="jsonDataArtist2.name" 
+          :styles="jsonDataArtist2.style" 
+          :presentation="jsonDataArtist2.resume" 
+          :link="jsonDataArtist2.link">
+        </ArtistRight>
+    </div>
+    <div id="artist-2-mobile" v-if="jsonDataArtist2">
+        <ArtistLeft 
+          :profilePicture="jsonDataArtist2.profilePicture" 
+          :name="jsonDataArtist2.name" 
+          :styles="jsonDataArtist2.style" 
+          :presentation="jsonDataArtist2.resume" 
+          :link="jsonDataArtist2.link">
+        </ArtistLeft>
+    </div>
   </section>
 
 </template>
@@ -50,10 +53,28 @@ import ArtistRight from "../components/ArtistRightComponent.vue";
     },
     data() {
       return {
-        artist : true,
-        
+        jsonDataArtist1 : null,
+        jsonDataArtist2 : null,
       }
-
+    },
+    created() {
+      // Effectuer la requête HTTP vers l'API pour récupérer le JSON
+      fetch('https://127.0.0.1:8000/api/artists/1') // Remplacez l'URL par l'adresse de l'API réelle
+        .then(response => response.json())
+        .then(data => {
+          this.jsonDataArtist1 = data; // Stocker les données JSON récupérées dans la variable jsonData
+        })
+        .catch(error => {
+          console.error('Erreur lors de la récupération du JSON depuis l\'API:', error);
+        });
+        fetch('https://127.0.0.1:8000/api/artists/3') // Remplacez l'URL par l'adresse de l'API réelle
+        .then(response => response.json())
+        .then(data => {
+          this.jsonDataArtist2 = data; // Stocker les données JSON récupérées dans la variable jsonData
+        })
+        .catch(error => {
+          console.error('Erreur lors de la récupération du JSON depuis l\'API:', error);
+        });
     },
   }
 </script>
@@ -122,6 +143,8 @@ import ArtistRight from "../components/ArtistRightComponent.vue";
   }
   #artist-2-mobile{
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 7rem;
     margin-bottom: 7rem;
   }

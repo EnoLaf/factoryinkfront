@@ -16,15 +16,17 @@
     components: {
       
     },
-    data() {
-      return {
-        
-      }
-
-    },
-    methods: {
+  data() {
+    return {
       
     }
+
+  },
+  methods: {
+    redirectToContact() {
+      this.$router.push(this.link);
+    },
+  },
   }
 </script>
 

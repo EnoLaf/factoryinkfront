@@ -6,7 +6,7 @@
         <p class="name">{{ name }}</p>
         <p class="styles">{{ styles }}</p>
         <p class="presentation">{{ presentation }}</p>
-        <button class="portfolio-button">Portfolio</button>
+        <button @click="redirectToPortfolio" class="portfolio-button">Portfolio</button>
       </div>
     </section>
 </template>
@@ -30,8 +30,17 @@ props: {
     presentation : {
         type : String,
         required : true
+    },
+    link : {
+        type : String,
+        required : true
     }
-}
+},
+methods: {
+    redirectToPortfolio() {
+        this.$router.push(this.link);
+    },
+},
 };
 </script>
 

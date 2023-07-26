@@ -4,7 +4,7 @@
         <div class="container">
             <div class="img" :style="{ 'background-image': 'url(' + profilePicture + ')' }"></div>
             <p class="name">{{ name }}</p>
-            <button class="portfolio-button">Portfolio</button>
+            <button @click="redirectToPortfolio" class="portfolio-button">Portfolio</button>
         </div>
     </section>
 </template>
@@ -20,8 +20,17 @@ props: {
     name : {
         type : String,
         required : true
+    },
+    link :{
+        type : String,
+        required : true
     }
-}
+},
+methods: {
+    redirectToPortfolio() {
+        this.$router.push(this.link);
+    },
+},
 };
 </script>
 
