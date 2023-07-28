@@ -176,7 +176,9 @@ h1{
 
 /* Responsive */
 @media (max-width : 480px) {
-    
+    .container{
+        width: 70vw;
+    }
 }
 
 @media (min-width: 481px) and (max-width : 1024px) {
